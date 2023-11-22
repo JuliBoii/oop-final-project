@@ -1,6 +1,4 @@
-#include <iostream>
-#include <glew.h> // Include GLEW for function-pointers, etc.
-#include <glfw3.h> // Include GLFW for windows, context, etc.
+#include "Base.h"
 
 void key_callback(GLFWwindow* window, const int key, int scancode, const int action, const int mode) {
     // if you press ESC and set windowShouldClose to True, the external
@@ -25,9 +23,9 @@ int main() {
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    #ifdef __APPLE__
-        glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-    #endif
+#ifdef __APPLE__
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+#endif
 
     glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
@@ -50,8 +48,7 @@ int main() {
 
     glfwSetKeyCallback(window, key_callback); // Registering Callbacks
 
-    if (glewInit() != GLEW_OK)
-    {
+    if (glewInit() != GLEW_OK) {
         std::cout << "Error!" << std::endl;
         glfwTerminate();
     }
