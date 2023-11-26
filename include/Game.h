@@ -2,40 +2,41 @@
 // Created by Angel Hernandez on 11/20/23.
 //
 
-#ifndef GAME_H
-#define GAME_H
+#ifndef OOP_FINAL_PROJECT_GAME_H
+#define OOP_FINAL_PROJECT_GAME_H
 
-#include "Base.h"
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
 
-// Represents the current state of the game
-enum GameState {
-    GAME_ACTIVE,
-    GAME_MENU,
-    GAME_WIN
+// Represents the current state of the Game
+enum GAMESTATE {
+    GameActive,
+    GameMenu,
+    GameWin
 };
 
 class Game {
 public:
-    GameState State;
-    GLboolean Keys[1024];
-    GLuint Width, Height;
+    GAMESTATE state;
+    GLboolean keys[1024];
+    GLuint width, height;
 
-    Game(GLuint Width, GLuint Height);
+    Game(GLuint width, GLuint height);
 
     ~Game();
 
-    // Initiaialize Game State
-    void Init();
+    // Initialize Game State
+    void init();
 
     // Game Loop
-    // Splitiing the Render Logic from the
-    // Movement Logic (ProcessInput)
-    void ProcessInput(GLfloat dt);
+    // Splitting the render Logic from the
+    // Movement Logic (processInput)
+    void processInput(GLfloat dt);
 
-    void Update(GLfloat dt);
+    void update(GLfloat dt);
 
-    void Render();
+    void render();
 };
 
 
-#endif //GAME_H
+#endif //OOP_FINAL_PROJECT_GAME_H
