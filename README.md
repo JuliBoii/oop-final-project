@@ -25,3 +25,29 @@ To install dependencies run the following commands in a new terminal:
 
 `brew install assimp freetype glm glfw glew`
 
+Once the dependencies have been installed into the system. _Assuming you have [CMAKE](https://cmake.org) and Make
+already on your system._
+
+In the terminal Make a build folder in the project folder: `oop-final-project % mkdir build`
+
+    |-oop-final-project
+
+        |--build
+
+        |--include
+
+        |--src
+
+In a terminal move into the build folder.
+
+`cd build`
+
+Then you will generate the Makefile using the command:
+
+`cmake ../`
+
+Then, in the same build folder, you will build the Makefile using the command:
+
+`make`
+
+**_The first time you run this command, it will fail. That is fine, just run the command again and it should work._**

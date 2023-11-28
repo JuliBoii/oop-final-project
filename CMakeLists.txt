@@ -59,7 +59,7 @@ target_link_libraries(game glfw
 target_include_directories(game PUBLIC "${CMAKE_CURRENT_LIST_DIR}/include")
 
 # Make sure third-party is built before executable
-#add_dependencies(game SOIL)
+add_dependencies(game SOIL)
 
 
 # FOR MAC
